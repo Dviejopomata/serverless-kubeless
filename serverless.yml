@@ -23,20 +23,27 @@ plugins:
   - serverless-kubeless
 
 package:
+  artifact: .serverless/new-protect.zip
   exclude:
     - venv/**
 functions:
   hello:
     handler: handler.hello
     package:
-      exclude:
-        - venv/**
+      artifact: hello.zip
   clock:
     handler: handler.print_clock
     package:
-      exclude:
-        - venv/**
+      artifact: clock.zip
     events:
       - schedule: '* * * * *'
+  sendmail:
+      handler: handler.send_mail
+      package:
+        artifact: mail.zip
+      events:
+        - trigger: 'send_mail'
   markdown:
     handler: handler.render_markdown
+    package:
+      artifact: markdown.zip

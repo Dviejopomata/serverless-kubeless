@@ -11,6 +11,11 @@ def print_clock():
     return clock
 
 
+def send_mail(context):
+    print("Sending mail")
+    return context
+
+
 def render_markdown(request):
     body = mistune.markdown(request.json['data'])
     response = {
@@ -22,7 +27,7 @@ def render_markdown(request):
 
 def hello(request):
     body = {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
+        "message": "Go Serverless v1.1! Your function executed successfully!",
         "input": request.json
     }
 
