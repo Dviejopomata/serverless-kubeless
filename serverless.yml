@@ -22,10 +22,21 @@ provider:
 plugins:
   - serverless-kubeless
 
+package:
+  exclude:
+    - venv/**
 functions:
   hello:
     handler: handler.hello
+    package:
+      exclude:
+        - venv/**
   clock:
-    handler: handler.printClock
+    handler: handler.print_clock
+    package:
+      exclude:
+        - venv/**
     events:
       - schedule: '* * * * *'
+  markdown:
+    handler: handler.render_markdown
