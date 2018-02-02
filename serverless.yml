@@ -25,3 +25,7 @@ plugins:
 functions:
   hello:
     handler: handler.hello
+  clock:
+    handler: handler.printClock
+    events:
+      - schedule: '* * * * *'
