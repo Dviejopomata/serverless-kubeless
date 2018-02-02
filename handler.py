@@ -27,7 +27,7 @@ def render_markdown(request):
 
 def hello(request):
     body = {
-        "message": "Go Serverless v1.1! Your function executed successfully!",
+        "message": "Go Serverless v1.0! Your function executed successfully!",
         "input": request.json
     }
 
